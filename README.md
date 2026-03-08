@@ -191,3 +191,14 @@ of
 ```bash
 crontab -l
 ```
+
+```txt
+# Elke 15 minuten de sensor uitlezen
+0,15,30,45 * * * * ~/pythonscripts/dhtvenv/bin/python ~/pythonscripts/temperatuurlogger.py
+
+# Elke 15 minuten de afbeelding verversen
+1,16,31,46 * * * * ~/pythonscripts/dhtvenv/bin/python ~/pythonscripts/BewaarTempGrafiek.py
+
+# Elke 15 minuten de afbeelding kopiëren naar webroot
+2,17,32,47 * * * * sudo cp ~/Raspi25Temperatuur.png /var/www/html/afbeeldingen/Raspi25Temperatuur.png
+```
